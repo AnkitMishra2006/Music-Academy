@@ -2,6 +2,108 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
+@theme inline {
+  --animate-spotlight: spotlight 2s ease 0.75s 1 forwards;
+}
+
+@keyframes spotlight {
+  0% {
+    opacity: 0;
+    transform: translate(-72%, -62%) scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -40%) scale(1);
+  }
+}
+@tailwind utilities;
+
+/* :root CSS Variables for all Tailwind colors */
+@layer base {
+  :root {
+    /* Add your custom variables manually or use this as a starting point */
+    --white: #ffffff;
+    --black: #000000;
+    --slate-500: #64748b;
+    --gray-500: #6b7280;
+    --zinc-500: #71717a;
+    --neutral-500: #737373;
+    --stone-500: #78716c;
+    --red-500: #ef4444;
+    --orange-500: #f97316;
+    --amber-500: #f59e0b;
+    --yellow-500: #eab308;
+    --lime-500: #84cc16;
+    --green-500: #22c55e;
+    --emerald-500: #10b981;
+    --teal-500: #14b8a6;
+    --cyan-500: #06b6d4;
+    --sky-500: #0ea5e9;
+    --blue-500: #3b82f6;
+    --indigo-500: #6366f1;
+    --violet-500: #8b5cf6;
+    --purple-500: #a855f7;
+    --fuchsia-500: #d946ef;
+    --pink-500: #ec4899;
+    --rose-500: #f43f5e;
+  }
+}
+
+/* Custom animations and keyframes */
+@layer utilities {
+  @keyframes spotlight {
+    0% {
+      opacity: 0;
+      transform: translate(-72%, -62%) scale(0.5);
+    }
+    100% {
+      opacity: 1;
+      transform: translate(-50%, -40%) scale(1);
+    }
+  }
+
+  @keyframes scroll {
+    to {
+      transform: translate(calc(-50% - 0.5rem));
+    }
+  }
+
+  .animate-spotlight {
+    animation: spotlight 2s ease 0.75s 1 forwards;
+  }
+
+  .animate-scroll {
+    animation: scroll var(--animation-duration, 40s)
+      var(--animation-direction, forwards) linear infinite;
+  }
+
+  .bg-gradient-radial {
+    background-image: radial-gradient(var(--tw-gradient-stops));
+  }
+
+  .bg-gradient-conic {
+    background-image: conic-gradient(
+      from 180deg at 50% 50%,
+      var(--tw-gradient-stops)
+    );
+  }
+}
+
+/* SVG background patterns */
+@layer utilities {
+  .bg-grid-white {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' width='32' height='32' fill='none' stroke='white'%3E%3Cpath d='M0 .5H31.5V32'/%3E%3C/svg%3E");
+  }
+
+  .bg-grid-small-white {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' width='8' height='8' fill='none' stroke='white'%3E%3Cpath d='M0 .5H31.5V32'/%3E%3C/svg%3E");
+  }
+
+  .bg-dot-white {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' width='16' height='16' fill='none'%3E%3Ccircle fill='white' id='pattern-circle' cx='10' cy='10' r='1.6257413380501518'%3E%3C/circle%3E%3C/svg%3E");
+  }
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
