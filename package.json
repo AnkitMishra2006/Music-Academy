@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "clsx": "^2.1.1",
+    "mini-svg-data-uri": "^1.4.4",
     "motion": "^12.7.4",
     "next": "15.3.1",
     "react": "^19.0.0",
