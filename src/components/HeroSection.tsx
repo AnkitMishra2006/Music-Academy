@@ -20,7 +20,6 @@ function HeroSection() {
         </p>
         <div className="mt-4">
           <Link href={"/courses"}>
-            {" "}
             <Button
               borderRadius="1.75rem"
               className="bg-white dark:bg-black text-black dark:text-white border-neutral-200 dark:border-slate-800"
